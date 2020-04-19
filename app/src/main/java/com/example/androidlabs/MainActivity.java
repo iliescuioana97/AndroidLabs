@@ -2,48 +2,74 @@ package com.example.androidlabs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
+    private Object Menu;
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.layout.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.product_list_option:
+                Intent myIntent = new Intent(this, ProductList.class);
+                startActivity(myIntent);
+                break;
+            case R.id.back_option:
+                break;
+        }
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ListView list = findViewById(R.id.productList);
+        TextView logoText = findViewById(R.id.logo);
+        logoText.setText("My Shopping App");
+    }
 
-        ArrayList<String> products = new ArrayList<>(Arrays.asList("Tricou", "Bluza", "Pantaloni", "Pulover", "Shorts", "Blugi", "Esarfa"));
-        final ArrayList<String> products_desc = new ArrayList<>(Arrays.asList("Acesta este un tricou.", "Aceasta este o bluza.", "Avem aici o pereche de pantaloni.",  "Pulover", "Shorts", "Blugi", "Esarfa"));
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, products);
-        list.setAdapter(arrayAdapter);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("POS", Integer.toString(position));
-                String product_name = (String) list.getItemAtPosition(position);
-                String product_description = (String) products_desc.get(position);
-                TextView productTextView = findViewById(R.id.textview);
-                productTextView.setText(product_description);
-            }
-        });
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("lifecycle","onStart invoked");
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("lifecycle","onResume invoked");
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("lifecycle","onPause invoked");
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("lifecycle","onStop invoked");
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("lifecycle","onRestart invoked");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("lifecycle","onDestroy invoked");
     }
 }
