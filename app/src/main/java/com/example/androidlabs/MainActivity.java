@@ -1,8 +1,12 @@
 package com.example.androidlabs;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,6 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Object Menu;
+
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -21,13 +26,29 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId())
-        {
-            case R.id.product_list_option:
-                Intent myIntent = new Intent(this, ProductList.class);
-                startActivity(myIntent);
+        switch (item.getItemId()) {
+            case R.id.feedback_option:
+                Intent feedback_intent = new Intent(this, Feedback.class);
+                startActivity(feedback_intent);
                 break;
-            case R.id.back_option:
+            case R.id.mycart_option:
+                break;
+            case R.id.product_list_option:
+                Intent products_intent = new Intent(this, ProductList.class);
+                startActivity(products_intent);
+                break;
+            case R.id.offers_option:
+                String url = "http://www.reserved.com";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                break;
+            case R.id.contact_option:
+                String phone = "+34666777888";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                startActivity(intent);
+                break;
+            case R.id.logout_option:
                 break;
         }
         return true;

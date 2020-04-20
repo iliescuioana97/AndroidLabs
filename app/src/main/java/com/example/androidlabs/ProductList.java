@@ -39,10 +39,6 @@ public class ProductList extends AppCompatActivity {
         });
     }
 
-//    // This callback is called only when there is a saved instance that is previously saved by using
-//    // onSaveInstanceState(). We restore some state in onCreate(), while we can optionally restore
-//    // other state here, possibly usable after onStart() has completed.
-//    // The savedInstanceState Bundle is same as the one used in onCreate().
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         TextView productTextView = findViewById(R.id.textview);
@@ -54,7 +50,6 @@ public class ProductList extends AppCompatActivity {
         }
     }
 
-//    // invoked when the activity may be temporarily destroyed, save the instance state here
     @Override
     public void onSaveInstanceState(Bundle outState) {
         TextView productTextView = findViewById(R.id.textview);

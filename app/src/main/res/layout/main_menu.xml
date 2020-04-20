@@ -2,9 +2,21 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="400dp">
     <item
+        android:id="@+id/feedback_option"
+        android:title="Feedback"/>
+    <item
+        android:id="@+id/mycart_option"
+        android:title="My Cart"/>
+    <item
         android:id="@+id/product_list_option"
         android:title="Product List"/>
     <item
-        android:id="@+id/back_option"
-        android:title="Back"/>
+        android:id="@+id/offers_option"
+        android:title="Special Offers"/>
+    <item
+        android:id="@+id/contact_option"
+        android:title="Contact Us"/>
+    <item
+        android:id="@+id/logout_option"
+        android:title="Log Out"/>
 </menu>
