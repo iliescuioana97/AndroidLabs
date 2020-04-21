@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.preference_option:
-//                Intent preference_intent = new Intent(this, PreferenceActivity.class);
-//                startActivity(preference_intent);
+                Intent preference_intent = new Intent(this, PreferenceActivity.class);
+                startActivity(preference_intent);
                 break;
             case R.id.logout_option:
                 break;
