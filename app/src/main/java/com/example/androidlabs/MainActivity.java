@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                 startActivity(intent);
                 break;
+            case R.id.preference_option:
+//                Intent preference_intent = new Intent(this, PreferenceActivity.class);
+//                startActivity(preference_intent);
+                break;
             case R.id.logout_option:
                 break;
         }

@@ -17,6 +17,9 @@
         android:id="@+id/contact_option"
         android:title="Contact Us"/>
     <item
+        android:id="@+id/preference_option"
+        android:title="Preferences"/>
+    <item
         android:id="@+id/logout_option"
         android:title="Log Out"/>
 </menu>
