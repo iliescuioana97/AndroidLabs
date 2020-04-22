@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent preference_intent = new Intent(this, PreferenceActivity.class);
                 startActivity(preference_intent);
                 break;
+            case R.id.sensors_option:
+                Intent sensors_intent = new Intent(this, SensorsActivity.class);
+                startActivity(sensors_intent);
+                break;
+            case R.id.camera_option:
+                Intent camera_intent = new Intent(this, CameraActivity.class);
+                startActivity(camera_intent);
+                break;
             case R.id.logout_option:
                 break;
         }

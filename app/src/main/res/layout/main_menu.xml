@@ -20,6 +20,12 @@
         android:id="@+id/preference_option"
         android:title="Preferences"/>
     <item
+        android:id="@+id/sensors_option"
+        android:title="Sensors"/>
+    <item
+        android:id="@+id/camera_option"
+        android:title="Camera"/>
+    <item
         android:id="@+id/logout_option"
         android:title="Log Out"/>
 </menu>
